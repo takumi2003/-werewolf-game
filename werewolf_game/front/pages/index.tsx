@@ -1,3 +1,7 @@
+import GameRoom from "@/components/GameRoom";
+
 export default function Home() {
-  return <div>Home</div>
+  return <>
+    <GameRoom title="Game Room" count={0} />
+  </>
 }
