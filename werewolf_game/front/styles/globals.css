@@ -1,27 +1,84 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* styles/globals.css */
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-family: 'Arial', sans-serif;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.homepage, .game-room, .voting-screen, .result-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.title {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.username-input, .join-button, .vote-button, .vote-submit {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1em;
+}
+
+.username-input {
+  background-color: #333;
+  color: #fff;
+}
+
+.join-button, .vote-button, .vote-submit {
+  background-color: #4caf50;
+  color: #fff;
+  cursor: pointer;
+}
+
+.join-button:hover, .vote-button:hover, .vote-submit:hover {
+  background-color: #45a049;
+}
+
+.players-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.player-avatar {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.player-avatar.selected {
+  border: 2px solid #4caf50;
+}
+
+.player-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.player-list li {
+  padding: 10px;
+  margin: 5px 0;
+}
+
+.player-list .alive {
+  color: #4caf50;
+}
+
+.player-list .dead {
+  color: #ff0000;
 }
